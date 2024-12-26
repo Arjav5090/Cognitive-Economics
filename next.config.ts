@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: 'export', 
   images: {
     domains: ['placeholder.com'], // Add any image domains you'll be using
     remotePatterns: [
