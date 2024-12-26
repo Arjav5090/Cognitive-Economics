@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   images: {
     domains: ['placeholder.com'], // Add any image domains you'll be using
+    unoptimized: true,  
     remotePatterns: [
       {
         protocol: 'https',

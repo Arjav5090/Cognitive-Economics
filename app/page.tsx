@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[600px] w-full">
         <Image
-          src="/media/banner.png"
+          src="/Cognitive-Economics-Website/public/media/banner.png"
           alt="Andrew Caplin"
           layout="fill" // Makes image fill the container
           objectFit="cover" // Ensures the image maintains aspect ratio and covers the container
@@ -148,7 +148,7 @@ export default function Home() {
             </div>
             <div className=" flex h-[300px] w-full">
               <Image
-                src="/media/second.webp"
+                src="/Cognitive-Economics-Website/public/media/second.webp"
                 alt="Cognitive Economics"
                 width={500}
                 height={200}
