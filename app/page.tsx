@@ -3,14 +3,15 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-
+import banner from '@/public/media/banner.webp'
+import second from '@/public/media/second.webp'
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[600px] w-full">
         <Image
-          src="/cognitive-economics-website/public/media/banner.png"
+          src={banner}
           alt="Andrew Caplin"
           layout="fill" // Makes image fill the container
           objectFit="cover" // Ensures the image maintains aspect ratio and covers the container
@@ -148,7 +149,7 @@ export default function Home() {
             </div>
             <div className=" flex h-[300px] w-full">
               <Image
-                src="/cognitive-economics-website/public/media/second.webp"
+                src={second}
                 alt="Cognitive Economics"
                 width={500}
                 height={200}
