@@ -2,7 +2,7 @@
   "name": "cognitive-economics-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arjav5090.github.io/Cognitive-Economics-Website/",
+  "homepage": "https://arjav5090.github.io/Cognitive-Economics-Website",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
