@@ -1,101 +1,211 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative h-[600px] w-full">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/media/banner.png"
+          alt="Andrew Caplin"
+          layout="fill" // Makes image fill the container
+          objectFit="cover" // Ensures the image maintains aspect ratio and covers the container
+          className="object-cover" // This class ensures the image scales well
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold">Andrew Caplin</h1>
+            <p className="text-xl md:text-2xl">Economist, Researcher, Educator</p>
+            <div className="space-x-4">
+              <Button variant="secondary" size="lg" asChild>
+                <Link href="/cognitive-economics">Explore Cognitive Economics</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/chatbot">Chat with AI</Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Featured Sections */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* About Me */}
+            <Card>
+              <CardHeader>
+                <CardTitle>About Me</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Professor of Economics at New York University, specializing in cognitive economics and decision-making.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/about">Full Biography</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Current Projects */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Current Projects</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Leading research in cognitive economics, behavioral finance, and AI collaboration.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/research">View Projects</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Student Opportunities */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Student Opportunities</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Research assistantships and mentorship opportunities available for students.
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/opportunities">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Chatbot Feature */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center space-y-6">
+          <h2 className="text-3xl font-bold">Ask the Cognitive Economics Expert</h2>
+          <p className="text-lg max-w-2xl mx-auto">
+            Get instant answers to your questions about cognitive economics concepts, research, or real-world applications.
+          </p>
+          <Button variant="secondary" size="lg" asChild>
+            <Link href="/chatbot">Get Answers Now!</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Blog Preview */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Latest Insights</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Breaking into Cognitive Economics</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  A guide for students and early-career researchers interested in cognitive economics...
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/blog/breaking-into-cognitive-economics">Read More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Lessons from Interdisciplinary Work</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Insights from years of bridging economics, psychology, and neuroscience...
+                </p>
+                <Button variant="outline" asChild>
+                  <Link href="/blog/interdisciplinary-lessons">Read More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Cognitive Economics Preview */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Discover Cognitive Economics</h2>
+              <p className="text-muted-foreground mb-6">
+                Explore the intersection of economics, psychology, and neuroscience in understanding human decision-making.
+              </p>
+              <Button asChild>
+                <Link href="/cognitive-economics">Learn More</Link>
+              </Button>
+            </div>
+            <div className=" flex h-[300px] w-full">
+              <Image
+                src="/media/second.webp"
+                alt="Cognitive Economics"
+                width={500}
+                height={200}
+                className="rounded-lg object-cover"
+                objectFit="cover"
+                
+              />
+       
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+          <Card>
+            <CardHeader>
+              <CardTitle>Contact Us</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="first-name" className="text-sm font-medium">First Name</label>
+                    <Input id="first-name" placeholder="John" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="last-name" className="text-sm font-medium">Last Name</label>
+                    <Input id="last-name" placeholder="Doe" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
+                  <Input id="email" type="email" placeholder="john.doe@example.com" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                  <Input id="subject" placeholder="Research Inquiry" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Your message here..."
+                  ></textarea>
+                </div>
+                <Button type="submit">Send Message</Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+
