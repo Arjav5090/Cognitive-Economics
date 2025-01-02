@@ -51,13 +51,12 @@ export default function Home() {
                 src={AndrewCaplinImage}
                 alt="Professor Andrew Caplin"
                 fill
-                className="rounded-full object-cover shadow-2xl relative z-10"
+                className="rounded-full object-fit shadow-2xl relative z-10"
               />
             </motion.div>
             <motion.h1 
-              className="text-5xl md:text-6xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-black"
+              className="text-5xl md:text-6xl text-center font-bold tracking-tighter bg-clip-text text-transparent bg-black drop-shadow-xl"
               variants={fadeInUp}
-              style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}
             >
               Andrew Caplin
             </motion.h1>
@@ -66,23 +65,20 @@ export default function Home() {
           {/* Right column: Bio and Buttons */}
           <motion.div variants={fadeInUp} className="space-y-6 text-center lg:text-left">
             <motion.p 
-              className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-black"
+              className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-black drop-shadow-md"
               variants={fadeInUp}
-              style={{ textShadow: '0 0 5px rgba(255,255,255,0.3)' }}
             >
               Economist, Researcher, Innovator in Cognitive Economics
             </motion.p>
             <motion.p
-              className="text-lg text-muted-foreground"
+              className="text-lg text-muted-foreground font-mono tracking-wide"
               variants={fadeInUp}
-              style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}
             >
               Professor Andrew Caplin is a pioneering researcher in Cognitive Economics, bridging psychology, neuroscience, and economics to revolutionize our understanding of decision-making processes.
             </motion.p>
             <motion.p 
-              className="text-lg text-muted-foreground"
+              className="text-lg text-muted-foreground font-mono tracking-wide"
               variants={fadeInUp}
-              style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}
             >
               His work illuminates the intricate workings of the human mind in economic contexts, reshaping our approach to markets, policy, and real-world problem-solving.
             </motion.p>
@@ -110,9 +106,8 @@ export default function Home() {
           variants={stagger}
         >
           <motion.h2 
-            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-black"
+            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-black drop-shadow-xl"
             variants={fadeInUp}
-            style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}
           >
             Latest Book
           </motion.h2>
@@ -120,7 +115,7 @@ export default function Home() {
             variants={fadeInUp}
             className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#556B2F] to-[#2F4F4F]"
           >
-            <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,black)]" />
+            <div className="absolute inset-0 bg-grid-white/10 mask-image-linear-gradient" />
             <Card className="relative border-0 bg-transparent text-white">
               <div className="grid md:grid-cols-2 gap-8 p-8">
                 <div className="flex flex-col justify-center space-y-6">
@@ -128,10 +123,10 @@ export default function Home() {
                     className="space-y-4"
                     variants={fadeInUp}
                   >
-                    <h3 className="text-3xl font-bold tracking-tighter" style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}>
+                    <h3 className="text-3xl text-center font-bold tracking-tighter drop-shadow-md">
                       An Introduction to Cognitive Economics
                     </h3>
-                    <p className="text-xl text-white/80" style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+                    <p className="text-xl text-center text-white/80 font-mono tracking-wide">
                       The Science of Mistakes
                     </p>
                   </motion.div>
@@ -139,15 +134,15 @@ export default function Home() {
                     className="prose prose-invert"
                     variants={fadeInUp}
                   >
-                    <p style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+                    <p className="font-mono tracking-wide">
                       This groundbreaking book introduces "cognitive economics," a rapidly emerging interdisciplinary science built on economic, psychological, and data scientific foundations.
                     </p>
-                    <p style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+                    <p className="font-mono tracking-wide">
                       Professor Caplin provides innovative approaches to help scholars collaborate and solve problems that shape economic outcomes.
                     </p>
                   </motion.div>
                   <motion.div 
-                    className="flex flex-col sm:flex-row gap-4"
+                    className="flex flex-col items-center justify-center sm:flex-row gap-4"
                     variants={fadeInUp}
                   >
                     <Button 
@@ -174,9 +169,8 @@ export default function Home() {
                     </Button>
                   </motion.div>
                   <motion.p 
-                    className="text-sm text-white/60"
+                    className="text-sm text-white/60 font-mono tracking-wide"
                     variants={fadeInUp}
-                    style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}
                   >
                     Available as Open Access - Free to download and read online
                   </motion.p>
@@ -214,9 +208,8 @@ export default function Home() {
           variants={stagger}
         >
           <motion.h2 
-            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-black"
+            className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-black drop-shadow-xl"
             variants={fadeInUp}
-            style={{ textShadow: '0 0 10px rgba(255,255,255,0.5)' }}
           >
             Explore Cognitive Economics
           </motion.h2>
@@ -270,8 +263,8 @@ export default function Home() {
                 >
                   <item.icon className="h-10 w-10 mb-4 text-primary " />
                 </motion.div>
-                <h3 className="text-2xl font-bold mb-4" style={{ textShadow: '0 0 5px rgba(255,255,255,0.3)' }}>{item.title}</h3>
-                <p className="text-muted-foreground mb-4" style={{ fontFamily: 'monospace', letterSpacing: '0.05em' }}>{item.description}</p>
+                <h3 className="text-2xl font-bold mb-4 drop-shadow-md">{item.title}</h3>
+                <p className="text-muted-foreground mb-4 font-mono tracking-wide">{item.description}</p>
                 <Button variant="link" className="group p-0">
                   Learn more
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -284,4 +277,3 @@ export default function Home() {
     </div>
   )
 }
-
