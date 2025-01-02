@@ -134,9 +134,10 @@ export default function Home() {
                     className="prose prose-invert"
                     variants={fadeInUp}
                   >
-                    <p className="font-mono tracking-wide">
-                      This groundbreaking book introduces "cognitive economics," a rapidly emerging interdisciplinary science built on economic, psychological, and data scientific foundations.
-                    </p>
+                    <p>
+  This groundbreaking book introduces &quot;cognitive economics,&quot; a rapidly emerging interdisciplinary science built on economic, psychological, and data scientific foundations.
+</p>
+
                     <p className="font-mono tracking-wide">
                       Professor Caplin provides innovative approaches to help scholars collaborate and solve problems that shape economic outcomes.
                     </p>
