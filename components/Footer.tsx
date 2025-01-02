@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { Input } from './ui/input'
+import { Twitter, Linkedin, Github } from 'lucide-react'  // Importing icons from lucide-react
 
 export default function Footer() {
   return (
@@ -9,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Contact Information */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <address className="not-italic">
-              <p>Email: andrew.caplin@university.edu</p>
+            <h3 className="font-semibold mb-4 text-lg">Contact</h3>
+            <address className="not-italic text-sm">
+              <p>Email: ac1@nyu.edu</p>
               <p>Office: Economics Department</p>
               <p>New York University</p>
             </address>
@@ -19,7 +20,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/about" className="hover:text-primary">About</Link></li>
               <li><Link href="/research" className="hover:text-primary">Research</Link></li>
@@ -30,7 +31,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <h3 className="font-semibold mb-4 text-lg">Resources</h3>
             <ul className="space-y-2">
               <li><Link href="/cognitive-economics" className="hover:text-primary">Cognitive Economics</Link></li>
               <li><Link href="/chatbot" className="hover:text-primary">AI Assistant</Link></li>
@@ -41,7 +42,7 @@ export default function Footer() {
 
           {/* Newsletter Signup */}
           <div>
-            <h3 className="font-semibold mb-4">Subscribe for Updates</h3>
+            <h3 className="font-semibold mb-4 text-lg">Subscribe for Updates</h3>
             <form className="space-y-2">
               <Input
                 type="email"
@@ -52,10 +53,19 @@ export default function Footer() {
                 Subscribe
               </Button>
             </form>
-            <div className="mt-4 space-x-4">
-              <Link href="#" className="hover:text-primary">Twitter</Link>
-              <Link href="#" className="hover:text-primary">LinkedIn</Link>
-              <Link href="#" className="hover:text-primary">Google Scholar</Link>
+            <div className="mt-4 flex flex-wrap justify-center space-x-4">
+              <Link href="#" className="hover:text-primary flex items-center space-x-2">
+                <Twitter className="w-5 h-5" />
+                <span className="hidden sm:inline">Twitter</span>
+              </Link>
+              <Link href="#" className="hover:text-primary flex items-center space-x-2">
+                <Linkedin className="w-5 h-5" />
+                <span className="hidden sm:inline">LinkedIn</span>
+              </Link>
+              <Link href="#" className="hover:text-primary flex items-center space-x-2">
+                <Github className="w-5 h-5" />
+                <span className="hidden sm:inline">GitHub</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -63,4 +73,3 @@ export default function Footer() {
     </footer>
   )
 }
-
